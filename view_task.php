@@ -38,7 +38,8 @@
     <button type="button" onclick="window.location.href = 'index.php';">Back to List</button>
 
     <script>
-        const taskID = new URLSearchParams(window.location.search).get('taskID'); // Get taskID from URL
+        // Get taskID from URL
+        const taskID = new URLSearchParams(window.location.search).get('taskID'); 
 
         // Fetch the task data from the API and populate the form
         async function loadTaskDetails() {
