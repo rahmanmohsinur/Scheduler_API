@@ -28,7 +28,8 @@ $page_keywords = isset($page_keywords) ? htmlspecialchars($page_keywords) : 'def
 
         input, textarea, button {
             width: auto;
-            border: none;
+            color: #333;
+            border: 1px solid;
             background-color: rgba(255, 255, 255, 0);
         }
 
