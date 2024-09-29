@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Task</title>
-    <style>
-        * {
-            font-family: Arial, sans-serif;
-        }
+<div class="container">
 
-        .complete {
-            text-decoration: line-through;
-        }
-
-        label {
-            display: inline-block;
-            width: 100px;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Task Details</h1>
+<h1>Task Details</h1>
     
     <div id="taskDetails">
         <form id="taskForm">
@@ -38,12 +17,13 @@
     <button type="button" onclick="window.location.href = 'index.php';">Back to List</button>
 
     <script>
-        const taskID = new URLSearchParams(window.location.search).get('taskID'); // Get taskID from URL
+        // Get taskID from URL
+        const taskID = new URLSearchParams(window.location.search).get('taskID'); 
 
         // Fetch the task data from the API and populate the form
         async function loadTaskDetails() {
             try {
-                const response = await fetch(`http://localhost/scheduler_API/data/?taskID=${taskID}`);
+                const response = await fetch(`http://localhost/scheduler_API/api/?taskID=${taskID}`);
                 const task = await response.json();
                 
                 document.getElementById('taskDesc').value = task.taskDesc;
@@ -67,7 +47,7 @@
                     "completedState": completedState
                 });
 
-                const response = await fetch(`http://localhost/scheduler_API/data/`, {
+                const response = await fetch(`http://localhost/scheduler_API/api/`, {
                     method: 'POST',
                     body: params
                 });
@@ -84,7 +64,4 @@
         // Load task details on page load
         loadTaskDetails();
     </script>
-
-</body>
-</html>
-
+</div>
