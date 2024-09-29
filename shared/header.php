@@ -19,7 +19,7 @@ $page_keywords = isset($page_keywords) ? htmlspecialchars($page_keywords) : 'def
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         *, *:before, *:after {
-            box-sizing: inherit;
+            box-sizing: border-box;
         }
 
         * {
@@ -39,6 +39,17 @@ $page_keywords = isset($page_keywords) ? htmlspecialchars($page_keywords) : 'def
 
         .complete {
             text-decoration: line-through;
+        }
+
+    .taskTextSpan {
+            width: calc(100% - 156px);
+            display: inline-block;
+            color: #333;
+            border: 1px solid;
+            background-color: #f4f4f4;
+            padding: .20rem;
+            margin: 0 10px;
+            border-radius: 4px;
         }
 
         .viewSpan {
