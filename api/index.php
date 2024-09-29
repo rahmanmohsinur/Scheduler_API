@@ -2,6 +2,10 @@
 // connect to the database
 require 'db_connect.php';
 
+header("Content-Type: application/json");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Origin: *");
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     if (isset($_GET['taskID'])) {
